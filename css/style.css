@@ -569,15 +569,35 @@ app marcup
 }
 
 /* ----- scroll frame ----- */
+/* ----- scroll frame ----- */
 .art-scroll-frame {
   width: 100%;
   height: calc(100vh - 30px);
+  overflow: auto; /* Enable scrolling */
 }
 
-.scrollbar-track {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
+/* Custom scrollbar */
+.art-scroll-frame::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+}
+
+.art-scroll-frame::-webkit-scrollbar-thumb {
+  background-color: var(--#FFC107); /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+.art-scroll-frame::-webkit-scrollbar-track {
+  background-color: transparent; /* Color of the scrollbar track */
+}
+
+/* Hide scrollbar track when not hovering */
+.art-scroll-frame::-webkit-scrollbar-track:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Hide scrollbar buttons */
+.art-scroll-frame::-webkit-scrollbar-button {
+  display: none;
 }
 
 /* ----- app ----- */
